@@ -8,7 +8,8 @@ Ruby 3.2.2 or higher
 
 ````
 
-$ bundle 
+$ gem install bundler
+$ bundle install
 
 ````
 

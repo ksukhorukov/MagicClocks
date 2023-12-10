@@ -58,6 +58,6 @@
 
 ## How It Looks Like
 
-![screen_1](/screens/screen.png)
+![screen_1](/screens/screen.jpg)
 
-![screen_2](/screens/screen_2.png)
+![screen_2](/screens/screen_2.jpg)

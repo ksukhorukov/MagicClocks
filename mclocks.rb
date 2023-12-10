@@ -4,16 +4,30 @@ require 'colorize'
 require 'pry'
 
 class MagicClocks
-  attr_reader :builded_magic
+  COLORS = [:green, :red, :blue, :yellow]
+
+  attr_reader :builded_magic, :color
 
   def initialize
+    @color = COLORS.sample
+
     build_magic
   end 
 
   def display_magic 
-    puts "\n\t.::MAGIC CLOCKS::.\n".colorize(color: :green, mode: :bold)
-    builded_magic.each { |val| puts "\t#{' ' * 6}#{val}".colorize(color: :green, mode: :bold) }
-    puts "\n"
+    random_color
+    moto
+    builded_magic.each { |val| puts "\t#{' ' * 6}#{val}".colorize(color: color, mode: :bold) }
+  end 
+
+  private 
+
+  def moto 
+    puts "\n\t.::MAGIC CLOCKS::.\n".colorize(color: color, mode: :bold)
+  end 
+
+  def random_color
+    @color = ::MagicClocks::COLORS.sample
   end 
 
   def formatted_time(h, m)
@@ -38,4 +52,12 @@ class MagicClocks
   end 
 end
 
-MagicClocks.new.display_magic
+
+
+magick_clocks = MagicClocks.new 
+
+while(true) do 
+  system('clear')
+  magick_clocks.display_magic
+  sleep(0.2)
+end

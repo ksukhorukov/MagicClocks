@@ -39,6 +39,16 @@ class MagicClocks
     return "#{h}:#{m}"
   end 
 
+  def parts_equal?(str)
+    data = str.split(/:/)
+    data[0] == data[1]
+  end 
+
+  def hours_equals_minutes?(h, m)
+    h == m
+  end
+
+
   def build_magic
     return builded_magic unless @builded_magic.nil?
 
@@ -46,7 +56,13 @@ class MagicClocks
 
     for h in 1..24 do 
       for m in 1..60 do 
-        @builded_magic << formatted_time(h, m) if h == m
+       _h_m_formatted = formatted_time(h, m) 
+
+       if h == m
+         _formated = formatted_time(h, m)
+         @builded_magic <<  _formated if hours_equals_minutes?(h, m)
+         @builded_magic << _formated if parts_equal? _formated
+        end
       end
     end
     

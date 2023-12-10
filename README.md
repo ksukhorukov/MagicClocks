@@ -1,5 +1,17 @@
 # Magic Clocks
 
+## Requirements
+
+Ruby 3.2.2 or higher
+
+## Installation
+
+````
+
+$ bundle 
+
+````
+
 ## Usage 
 
 ````
@@ -55,9 +67,3 @@
         24:24
         24:24
 ````
-
-## How It Looks Like
-
-![screen_1](/screens/screen.jpg)
-
-![screen_2](/screens/screen_2.jpg)

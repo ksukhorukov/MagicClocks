@@ -62,11 +62,11 @@ class MagicClocks
 
        if h == m
          _formated = formatted_time(h, m)
-         @builded_magic <<  _formated if hours_equals_minutes?(h, m)
-         @builded_magic << _formated if parts_equal? _formated
+         @builded_magic <<  _formated if hours_equals_minutes?(h, m) || parts_equal?(_formated)
         end
       end
     end
+    binding.pry
     @builded_magic
   end 
 end

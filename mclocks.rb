@@ -1,21 +1,18 @@
 #!/usr/bin/env ruby
 
 require 'colorize'
+require 'pry'
 
 class MagicClocks
-  def initialize
-    display_magic 
-  end 
+  attr_reader :builded_magic
 
-  private 
+  def initialize
+    build_magic
+  end 
 
   def display_magic 
     puts "\n\t.::MAGIC CLOCKS::.\n".colorize(color: :green, mode: :bold)
-    for h in 1..24 do 
-      for m in 1..60 do 
-        puts "\t       #{formatted_time(h, m)}".colorize(color: :green, mode: :bold) if h == m
-      end
-    end
+    builded_magic.each { |val| puts "\t#{' ' * 6}#{val}".colorize(color: :green, mode: :bold) }
     puts "\n"
   end 
 
@@ -25,6 +22,20 @@ class MagicClocks
 
     return "#{h}:#{m}"
   end 
+
+  def build_magic
+    return builded_magic unless @builded_magic.nil?
+
+    @builded_magic = []
+
+    for h in 1..24 do 
+      for m in 1..60 do 
+        @builded_magic << formatted_time(h, m) if h == m
+      end
+    end
+    
+    @builded_magic
+  end 
 end
 
-MagicClocks.new
+MagicClocks.new.display_magic

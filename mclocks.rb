@@ -3,8 +3,10 @@
 require 'colorize'
 require 'pry'
 
+DELAY = 0.333333333333
+
 class MagicClocks
-  COLORS = [:green, :red, :blue, :yellow]
+  COLORS = [:green, :red, :light_blue, :yellow]
 
   attr_reader :builded_magic, :color
 
@@ -59,5 +61,5 @@ magick_clocks = MagicClocks.new
 while(true) do 
   system('clear')
   magick_clocks.display_magic
-  sleep(0.2)
+  sleep(DELAY)
 end

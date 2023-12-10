@@ -6,7 +6,9 @@ require 'pry'
 DELAY = 0.333333333333
 
 class MagicClocks
-  COLORS = [:green, :red, :light_blue, :yellow]
+  COLORS = [:green, :red, :blue]
+  ALIGN_TABS = 11
+  ALIGN_SPACES = 7
 
   attr_reader :builded_magic, :color
 
@@ -19,13 +21,13 @@ class MagicClocks
   def display_magic 
     random_color
     moto
-    builded_magic.each { |val| puts "\t#{' ' * 6}#{val}".colorize(color: color, mode: :bold) }
+    builded_magic.each { |val| puts "#{"\t" * ALIGN_TABS }#{' ' * ALIGN_SPACES}#{val}".colorize(color: color, mode: :bold) }
   end 
 
   private 
 
   def moto 
-    puts "\n\t.::MAGIC CLOCKS::.\n".colorize(color: color, mode: :bold)
+    puts "\n#{"\t" * ALIGN_TABS }.::MAGIC CLOCKS::.\n".colorize(color: color, mode: :bold)
   end 
 
   def random_color

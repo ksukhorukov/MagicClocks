@@ -55,3 +55,7 @@
         24:24
         24:24
 ````
+
+## How It Looks Like
+
+![screen](/screens/screen.png)

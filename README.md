@@ -68,3 +68,5 @@ $ bundle install
         24:24
         24:24
 ````
+
+48 magic numbers in total...

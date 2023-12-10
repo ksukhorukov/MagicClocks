@@ -67,7 +67,6 @@ class MagicClocks
         end
       end
     end
-    
     @builded_magic
   end 
 end
